@@ -6,6 +6,7 @@ public class Order {
     private int orderTotal=0;
 
     public void addItemToOrder(Item item){
+        orderItems.add(item);
     }
 
     public List<Item> getOrderItems(){
@@ -13,7 +14,8 @@ public class Order {
     }
 
     public int getOrderTotal(List<Item> orderItems){
+        for (Item item: orderItems)
+            orderTotal+=item.getPrice();
         return orderTotal;
+        }
     }
-
-}
